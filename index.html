@@ -27,6 +27,25 @@
             line-height: 1.6;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 2rem 1rem;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .video-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(17, 24, 39, 0.45);
+            z-index: -1;
         }
 
         .container {
@@ -316,6 +335,11 @@
                 padding: 0;
             }
 
+            .video-background,
+            .video-overlay {
+                display: none;
+            }
+
             .container {
                 box-shadow: none;
                 border-radius: 0;
@@ -328,6 +352,11 @@
     </style>
 </head>
 <body>
+    <video class="video-background" autoplay muted loop playsinline>
+        <source src="img/12716-241674181_small.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+
     <div class="container">
         <!-- Header -->
         <header class="header">
@@ -371,12 +400,12 @@
                     <div class="job-header">
                         <div class="job-title">Desenvolvedor Front-End (Freelance)</div>
                         <div class="company">We Techhub</div>
-                        <div class="period">Setembro/2025 – Atual</div>
+                        <div class="period">Jan/2025 – Atual</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Desenvolvimento do site institucional da empresa, com foco em performance e experiência do usuário (UX/UI).</li>
-                        <li>Criação de componentes e interfaces dinâmicas utilizando a biblioteca Vue.js, além de estruturação com HTML, CSS e JavaScript.</li>
-                        <li>Versionamento de código e organização do repositório de projetos.</li>
+                        <li>Desenvolvimento do site institucional da empresa com foco em performance e experiência do usuário (UX/UI).</li>
+                        <li>Criação de componentes e interfaces dinâmicas utilizando Vue.js, HTML, CSS e JavaScript.</li>
+                        <li>Versionamento de código e organização do repositório de projetos com Git.</li>
                     </ul>
                 </div>
 
@@ -384,14 +413,12 @@
                     <div class="job-header">
                         <div class="job-title">Technical Support</div>
                         <div class="company">Digital Horizon Blockchain Technology</div>
-                        <div class="period">Nov/2024 - Abr/2025</div>
+                        <div class="period">Nov/2024 – Abr/2025</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Atendimento ao Cliente</li>
-                        <li>Suporte a compras de criptomoedas</li>
-                        <li>Teste em aplicações e ferramentas de compra e venda de cripto</li>
-                        <li>Aprendizado em equipes ágeis</li>
-                        <li>Análise e monitoramento nos bots da Api</li>
+                        <li>Atendimento ao cliente e suporte técnico a compras de criptomoedas nas principais exchanges da América Latina.</li>
+                        <li>Análise e monitoramento de bots via API, garantindo estabilidade nas operações automatizadas.</li>
+                        <li>Testes em aplicações de compra e venda de cripto e aprendizado em equipes ágeis.</li>
                     </ul>
                 </div>
 
@@ -399,13 +426,12 @@
                     <div class="job-header">
                         <div class="job-title">Technical Support</div>
                         <div class="company">Truther</div>
-                        <div class="period">Nov/2024 - Abr/2025</div>
+                        <div class="period">Nov/2024 – Abr/2025</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Auxílio na resolução de problemas técnicos relacionados a ativos digitais</li>
-                        <li>Suporte a compras de criptomoedas</li>
-                        <li>Acompanhamento de tickets e registro de incidentes em ferramentas de suporte técnico</li>
-                        <li>Participação em testes de usabilidade de novas features da exchange</li>
+                        <li>Auxílio na resolução de problemas técnicos relacionados a ativos digitais.</li>
+                        <li>Acompanhamento de tickets e registro de incidentes em ferramentas de suporte técnico.</li>
+                        <li>Participação em testes de usabilidade de novas features da exchange.</li>
                     </ul>
                 </div>
 
@@ -413,12 +439,12 @@
                     <div class="job-header">
                         <div class="job-title">Auxiliar de Estoque</div>
                         <div class="company">BKA Conexões</div>
-                        <div class="period">Mai/2020 - Mai/2024</div>
+                        <div class="period">Mai/2020 – Mai/2024</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Despacho eficiente de mercadorias, garantindo a entrega rápida e precisa para clientes, contribuindo para a otimização dos prazos de envio e a satisfação do cliente.</li>
-                        <li>Organização de logística de entrega, coordenando rotas e prazos de forma estratégica para maximizar a eficiência das entregas e reduzir custos operacionais.</li>
-                        <li>Atendimento direto ao cliente, oferecendo suporte na identificação de produtos e esclarecimento de dúvidas, garantindo um serviço ágil e de qualidade.</li>
+                        <li>Despacho eficiente de mercadorias, garantindo entrega rápida e precisa para clientes.</li>
+                        <li>Organização de logística de entrega, coordenando rotas e prazos para maximizar eficiência e reduzir custos operacionais.</li>
+                        <li>Atendimento direto ao cliente, oferecendo suporte na identificação de produtos e esclarecimento de dúvidas.</li>
                     </ul>
                 </div>
             </section>
@@ -439,6 +465,10 @@
                         <div class="skill-title">Proatividade</div>
                         <div class="skill-description">Iniciativa em buscar soluções rápidas e eficientes, otimizando processos e minimizando interrupções no uso de sistemas.</div>
                     </div>
+                    <div class="skill-item">
+                        <div class="skill-title">Desenvolvimento Front-End</div>
+                        <div class="skill-description">Criação de interfaces com Vue.js, HTML, CSS e JavaScript, com foco em UX/UI e versionamento com Git.</div>
+                    </div>
                 </div>
             </section>
 
@@ -448,11 +478,11 @@
                 <div class="education-item">
                     <div class="education-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</div>
                     <div class="institution">Universidade Cruzeiro do Sul</div>
-                    <div class="education-period">Fev/2024 - Dez/2026</div>
+                    <div class="education-period">Fev/2024 – Dez/2026</div>
                 </div>
                 <div class="education-item">
                     <div class="education-title">Ensino Médio Completo</div>
-                    <div class="institution">E.E Thereza Dorothea</div>
+                    <div class="institution">E.E. Thereza Dorothea</div>
                 </div>
             </section>
 
@@ -462,6 +492,16 @@
                 <div class="course-item">
                     <div class="course-title">Suporte Técnico</div>
                     <div class="institution">Gabriel Gomes da Silva</div>
+                </div>
+                <div class="course-item">
+                    <div class="course-title">Curso Web Moderno Completo + JavaScript</div>
+                    <div class="institution">Competências: JavaScript · HTML5 · CSS · Node.js · Vue.js</div>
+                </div>
+                <div class="course-item">
+                    <div class="course-title">NLW Agents - Iniciante</div>
+                    <div class="institution">Rocketseat</div>
+                    <div class="education-period">Jul/2025</div>
+                    <div class="education-period">Competências: HTML5 · CSS · JavaScript</div>
                 </div>
             </section>
         </main>
