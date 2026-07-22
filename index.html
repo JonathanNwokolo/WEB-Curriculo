@@ -3,583 +3,787 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jonathan Nwokolo - Currículo</title>
+    <meta
+      name="description"
+      content="Currículo web de Jonathan Nwokolo, desenvolvedor full stack em formação, com foco em JavaScript, Vue.js, Node.js, interfaces web e soluções digitais."
+    />
+    <title>Jonathan Nwokolo | Desenvolvedor Full Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      :root {
+        --bg: #eef2f6;
+        --surface: #ffffff;
+        --surface-soft: #f7f9fc;
+        --ink: #111827;
+        --muted: #526070;
+        --line: #dbe3ed;
+        --accent: #2563eb;
+        --accent-strong: #1d4ed8;
+        --accent-soft: #dbeafe;
+        --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
       }
 
-      :root {
-        --primary-color: #2563eb;
-        --secondary-color: #1e40af;
-        --text-dark: #1f2937;
-        --text-light: #6b7280;
-        --bg-light: #f9fafb;
-        --border-color: #e5e7eb;
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
-        font-family: "Inter", sans-serif;
-        color: var(--text-dark);
-        line-height: 1.6;
-        background: linear-gradient(
-          135deg,
-          #e0e7ff 0%,
-          #dbeafe 50%,
-          #eff6ff 100%
-        );
-        padding: 2rem 1rem;
-        position: relative;
         min-height: 100vh;
+        padding: 28px 16px;
+        background:
+          radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32rem),
+          linear-gradient(135deg, #f8fafc 0%, var(--bg) 100%);
+        color: var(--ink);
+        font-family: "Inter", Arial, sans-serif;
+        line-height: 1.6;
       }
 
-      .container {
-        max-width: 1000px;
+      a {
+        color: inherit;
+      }
+
+      .resume {
+        width: min(1120px, 100%);
         margin: 0 auto;
-        background: white;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        border-radius: 16px;
         overflow: hidden;
-        animation: fadeIn 0.8s ease-in;
+        background: var(--surface);
+        border: 1px solid rgba(219, 227, 237, 0.9);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
       }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 34px;
+        padding: 44px;
+        background: #111f3f;
+        color: #f8fafc;
       }
 
-      /* Header Section */
-      .header {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color) 0%,
-          var(--secondary-color) 100%
-        );
-        color: white;
-        padding: 3rem 2rem;
-        position: relative;
-        overflow: hidden;
+      .hero-main {
+        display: grid;
+        gap: 22px;
+        align-content: center;
       }
 
-      .header::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 300px;
-        height: 300px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
+      .eyebrow {
+        width: fit-content;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        padding: 6px 12px;
+        color: #bfdbfe;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .header-content {
+      h1 {
+        max-width: 700px;
+        font-size: clamp(2.2rem, 5vw, 4.4rem);
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 0.98;
+      }
+
+      .role {
+        color: #dbeafe;
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-weight: 600;
+      }
+
+      .intro {
+        max-width: 720px;
+        color: #dbeafe;
+        font-size: 1.02rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        background: #f8fafc;
+        color: #111f3f;
+      }
+
+      .button.secondary {
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        color: #f8fafc;
+      }
+
+      .profile-card {
+        display: grid;
+        gap: 18px;
+        align-self: stretch;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .profile-top {
         display: flex;
         align-items: center;
-        gap: 2rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .photo-container {
-        flex-shrink: 0;
+        gap: 18px;
       }
 
       .photo {
-        width: 150px;
-        height: 150px;
+        width: 112px;
+        height: 112px;
+        flex: 0 0 auto;
+        border: 4px solid rgba(255, 255, 255, 0.24);
         border-radius: 50%;
         object-fit: cover;
-        border: 5px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
       }
 
-      .photo:hover {
-        transform: scale(1.05);
+      .availability {
+        display: grid;
+        gap: 4px;
       }
 
-      .header-info h1 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        letter-spacing: -0.5px;
+      .availability strong {
+        color: #ffffff;
+        font-size: 1.05rem;
       }
 
-      .location {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        opacity: 0.9;
+      .availability span {
+        color: #cbd5e1;
+        font-size: 0.94rem;
       }
 
-      .contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        font-size: 0.9rem;
+      .contact-grid {
+        display: grid;
+        gap: 10px;
       }
 
       .contact-item {
         display: flex;
+        min-width: 0;
         align-items: center;
-        gap: 0.5rem;
-      }
-
-      .contact-item a {
-        color: white;
+        gap: 10px;
+        color: #e5eef8;
+        font-size: 0.94rem;
         text-decoration: none;
-        transition: opacity 0.3s;
       }
 
-      .contact-item a:hover {
-        opacity: 0.8;
+      .contact-item span:first-child {
+        display: inline-flex;
+        width: 28px;
+        height: 28px;
+        flex: 0 0 28px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.12);
       }
 
-      /* Main Content */
+      .contact-item span:last-child {
+        overflow-wrap: anywhere;
+      }
+
       .content {
-        padding: 2.5rem;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 34px;
+        padding: 38px 44px 46px;
+      }
+
+      .main-column,
+      .side-column {
+        display: grid;
+        gap: 28px;
+        align-content: start;
       }
 
       .section {
-        margin-bottom: 2.5rem;
-        animation: slideIn 0.6s ease-out;
+        display: grid;
+        gap: 16px;
       }
 
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateX(-20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--ink);
+        font-size: 0.92rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .section-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 3px solid var(--primary-color);
-        display: inline-block;
-        color: var(--primary-color);
+      .section-heading::after {
+        content: "";
+        height: 1px;
+        flex: 1;
+        background: var(--line);
       }
 
       .summary {
-        color: var(--text-light);
+        color: var(--muted);
         font-size: 1rem;
-        text-align: justify;
-        line-height: 1.8;
       }
 
-      /* Experience Items */
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .highlight {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: var(--surface-soft);
+      }
+
+      .highlight strong {
+        display: block;
+        color: var(--accent-strong);
+        font-size: 1.3rem;
+        line-height: 1.1;
+      }
+
+      .highlight span {
+        color: var(--muted);
+        font-size: 0.86rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 18px;
+      }
+
       .experience-item {
-        margin-bottom: 2rem;
-        padding-left: 1.5rem;
-        border-left: 3px solid var(--border-color);
-        transition: border-color 0.3s;
-      }
-
-      .experience-item:hover {
-        border-color: var(--primary-color);
+        position: relative;
+        display: grid;
+        gap: 10px;
+        border-left: 3px solid var(--accent);
+        padding-left: 18px;
       }
 
       .job-header {
-        margin-bottom: 0.8rem;
+        display: grid;
+        gap: 3px;
       }
 
       .job-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 0.3rem;
+        color: var(--ink);
+        font-size: 1.12rem;
+        font-weight: 800;
       }
 
-      .company {
-        font-weight: 500;
-        color: var(--primary-color);
-        margin-bottom: 0.3rem;
+      .company-line {
+        color: var(--accent-strong);
+        font-weight: 700;
       }
 
       .period {
-        color: var(--text-light);
+        color: var(--muted);
         font-size: 0.9rem;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       .responsibilities {
-        list-style: none;
-        padding-left: 0;
-      }
-
-      .responsibilities li {
-        padding-left: 1.5rem;
-        margin-bottom: 0.6rem;
-        position: relative;
-        color: var(--text-light);
-      }
-
-      .responsibilities li::before {
-        content: "▹";
-        position: absolute;
-        left: 0;
-        color: var(--primary-color);
-        font-weight: bold;
-      }
-
-      /* Skills */
-      .skills-list {
         display: grid;
-        gap: 1rem;
+        gap: 8px;
+        padding-left: 18px;
+        color: var(--muted);
       }
 
-      .skill-item {
-        padding: 1rem;
-        background: var(--bg-light);
-        border-radius: 8px;
-        border-left: 4px solid var(--primary-color);
-        transition:
-          transform 0.3s,
-          box-shadow 0.3s;
+      .responsibilities li::marker {
+        color: var(--accent);
       }
 
-      .skill-item:hover {
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      .side-panel {
+        display: grid;
+        gap: 14px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+        background: var(--surface-soft);
       }
 
-      .skill-title {
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-        color: var(--text-dark);
+      .side-panel h2 {
+        color: var(--ink);
+        font-size: 0.92rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
-      .skill-description {
-        font-size: 0.9rem;
-        color: var(--text-light);
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
-      /* Education & Courses */
-      .education-item,
-      .course-item {
-        margin-bottom: 1.5rem;
-        padding: 1rem;
-        background: var(--bg-light);
-        border-radius: 8px;
-        transition: transform 0.3s;
+      .tag {
+        border: 1px solid #c9d8e5;
+        border-radius: 999px;
+        padding: 6px 10px;
+        background: #ffffff;
+        color: #263445;
+        font-size: 0.86rem;
+        font-weight: 700;
       }
 
-      .education-item:hover,
-      .course-item:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      .stack-list,
+      .compact-list {
+        display: grid;
+        gap: 12px;
+        list-style: none;
       }
 
-      .education-title,
-      .course-title {
-        font-weight: 600;
-        color: var(--text-dark);
-        margin-bottom: 0.3rem;
+      .stack-list li,
+      .compact-list li {
+        color: var(--muted);
+        font-size: 0.93rem;
       }
 
-      .institution {
-        color: var(--primary-color);
-        margin-bottom: 0.3rem;
+      .stack-list strong,
+      .compact-list strong {
+        display: block;
+        color: var(--ink);
+        font-weight: 800;
       }
 
-      .education-period {
-        color: var(--text-light);
-        font-size: 0.9rem;
+      .education-item {
+        display: grid;
+        gap: 3px;
+        color: var(--muted);
+        font-size: 0.93rem;
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .header-content {
-          flex-direction: column;
-          text-align: center;
-        }
+      .education-item strong {
+        color: var(--ink);
+      }
 
-        .header-info h1 {
-          font-size: 2rem;
-        }
+      .project {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 16px;
+        background: #ffffff;
+      }
 
-        .contact-info {
-          flex-direction: column;
-          gap: 0.8rem;
-        }
+      .project strong {
+        display: block;
+        margin-bottom: 5px;
+        color: var(--ink);
+        font-size: 1rem;
+      }
 
+      .project p {
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
         .content {
-          padding: 1.5rem;
+          grid-template-columns: 1fr;
         }
 
-        .section-title {
-          font-size: 1.3rem;
+        .hero,
+        .content {
+          padding: 32px 24px;
+        }
+
+        .highlights {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        body {
+          padding: 0;
+        }
+
+        .resume {
+          border-radius: 0;
+        }
+
+        .hero,
+        .content {
+          padding: 26px 18px;
+        }
+
+        .profile-top {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .photo {
+          width: 96px;
+          height: 96px;
+        }
+
+        .hero-actions {
+          display: grid;
+        }
+
+        .button {
+          width: 100%;
         }
       }
 
       @media print {
         body {
-          background: white;
           padding: 0;
+          background: #ffffff;
         }
 
-        .container {
-          box-shadow: none;
+        .resume {
+          border: 0;
           border-radius: 0;
+          box-shadow: none;
         }
 
-        .header {
-          background: var(--primary-color);
+        .hero {
+          color: #ffffff;
+          background: #111f3f;
+        }
+
+        .button {
+          border: 1px solid rgba(255, 255, 255, 0.4);
         }
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <!-- Header -->
-      <header class="header">
-        <div class="header-content">
-          <div class="photo-container">
-            <img
-              src="img/minhafoto.jpeg"
-              alt="Jonathan Nwokolo"
-              class="photo"
-            />
+    <article class="resume">
+      <header class="hero">
+        <div class="hero-main">
+          <p class="eyebrow">Currículo Web</p>
+          <div>
+            <h1>Jonathan Nwokolo</h1>
+            <p class="role">Desenvolvedor Full Stack em formação</p>
           </div>
-          <div class="header-info">
-            <h1>JONATHAN NWOKOLO</h1>
-            <div class="location">📍 São Paulo, Brasil</div>
-            <div class="contact-info">
-              <div class="contact-item">
-                📧
-                <a href="mailto:jonathan.nwokolo@gmail.com"
-                  >jonathan.nwokolo@gmail.com</a
-                >
-              </div>
-              <div class="contact-item">
-                📱 <a href="tel:+5511980195144">+55 (11) 98019-5144</a>
-              </div>
-              <div class="contact-item">
-                💼
-                <a
-                  href="https://www.linkedin.com/in/jonathan-nwokolo-772a97334"
-                  target="_blank"
-                  >LinkedIn</a
-                >
-              </div>
-              <div class="contact-item">
-                🔗
-                <a href="https://github.com/JonathanNwokolo" target="_blank"
-                  >GitHub</a
-                >
-              </div>
-            </div>
+          <p class="intro">
+            Desenvolvedor em formação com foco em desenvolvimento full stack,
+            interfaces web e soluções digitais. Tenho experiência prática com
+            HTML, CSS, JavaScript, Vue.js, Node.js e Git, além de vivência em
+            ambientes técnicos que exigem análise de problemas, organização e
+            comunicação. Busco oportunidades para construir aplicações
+            funcionais, responsivas e bem estruturadas do front-end ao back-end.
+          </p>
+          <div class="hero-actions" aria-label="Links de contato">
+            <a class="button primary" href="mailto:jonathan.nwokolo@gmail.com">
+              Enviar e-mail
+            </a>
+            <a
+              class="button secondary"
+              href="https://www.linkedin.com/in/jonathan-nwokolo-772a97334"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/JonathanNwokolo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
           </div>
         </div>
+
+        <aside class="profile-card" aria-label="Dados pessoais">
+          <div class="profile-top">
+            <img
+              class="photo"
+              src="img/minhafoto.jpeg"
+              alt="Foto de Jonathan Nwokolo"
+            />
+            <div class="availability">
+              <strong>São Paulo, Brasil</strong>
+              <span>Disponível para oportunidades em desenvolvimento full stack.</span>
+            </div>
+          </div>
+          <div class="contact-grid">
+            <a class="contact-item" href="mailto:jonathan.nwokolo@gmail.com">
+              <span>@</span>
+              <span>jonathan.nwokolo@gmail.com</span>
+            </a>
+            <a class="contact-item" href="tel:+5511980195144">
+              <span>☎</span>
+              <span>+55 (11) 98019-5144</span>
+            </a>
+            <a
+              class="contact-item"
+              href="https://github.com/JonathanNwokolo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span>GH</span>
+              <span>github.com/JonathanNwokolo</span>
+            </a>
+          </div>
+        </aside>
       </header>
 
-      <!-- Main Content -->
       <main class="content">
-        <!-- Resumo Profissional -->
-        <section class="section">
-          <h2 class="section-title">RESUMO PROFISSIONAL</h2>
-          <p class="summary">
-            Profissional com experiência em Suporte Técnico, Logística e
-            Desenvolvimento Front-End. Atuei prestando suporte técnico e guiando
-            centenas de clientes na aquisição de criptomoedas por meio das
-            principais plataformas de criptoativos da América Latina, oferecendo
-            suporte personalizado e soluções eficazes para garantir transações
-            seguras e bem-sucedidas. Atualmente desenvolvo interfaces web como
-            freelancer, utilizando Vue.js, HTML, CSS e JavaScript. Apaixonado
-            por tecnologia, em transição consolidada para a área de
-            Desenvolvimento, busco oportunidades para crescer profissionalmente
-            em TI e contribuir com soluções práticas e eficientes.
-          </p>
-        </section>
-
-        <!-- Experiências Profissionais -->
-        <section class="section">
-          <h2 class="section-title">EXPERIÊNCIAS PROFISSIONAIS</h2>
-
-          <div class="experience-item">
-            <div class="job-header">
-              <div class="job-title">Desenvolvedor Front-End (Freelance)</div>
-              <div class="company">We Techhub</div>
-              <div class="period">Setembro/2025 – Atual</div>
-            </div>
-            <ul class="responsibilities">
-              <li>
-                Desenvolvimento do site institucional da empresa com foco em
-                performance e experiência do usuário (UX/UI).
-              </li>
-              <li>
-                Criação de componentes e interfaces dinâmicas utilizando Vue.js,
-                HTML, CSS e JavaScript.
-              </li>
-              <li>
-                Versionamento de código e organização do repositório de projetos
-                com Git.
-              </li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <div class="job-header">
-              <div class="job-title">Technical Support</div>
-              <div class="company">Digital Horizon Blockchain Technology</div>
-              <div class="period">Nov/2024 – Abr/2025</div>
-            </div>
-            <ul class="responsibilities">
-              <li>
-                Atendimento ao cliente e suporte técnico a compras de
-                criptomoedas nas principais exchanges da América Latina.
-              </li>
-              <li>
-                Análise e monitoramento de bots via API, garantindo estabilidade
-                nas operações automatizadas.
-              </li>
-              <li>
-                Testes em aplicações de compra e venda de cripto e aprendizado
-                em equipes ágeis.
-              </li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <div class="job-header">
-              <div class="job-title">Technical Support</div>
-              <div class="company">Truther</div>
-              <div class="period">Nov/2024 – Abr/2025</div>
-            </div>
-            <ul class="responsibilities">
-              <li>
-                Auxílio na resolução de problemas técnicos relacionados a ativos
-                digitais.
-              </li>
-              <li>
-                Acompanhamento de tickets e registro de incidentes em
-                ferramentas de suporte técnico.
-              </li>
-              <li>
-                Participação em testes de usabilidade de novas features da
-                exchange.
-              </li>
-            </ul>
-          </div>
-
-          <div class="experience-item">
-            <div class="job-header">
-              <div class="job-title">Auxiliar de Estoque</div>
-              <div class="company">BKA Conexões</div>
-              <div class="period">Mai/2020 – Mai/2024</div>
-            </div>
-            <ul class="responsibilities">
-              <li>
-                Despacho eficiente de mercadorias, garantindo entrega rápida e
-                precisa para clientes.
-              </li>
-              <li>
-                Organização de logística de entrega, coordenando rotas e prazos
-                para maximizar eficiência e reduzir custos operacionais.
-              </li>
-              <li>
-                Atendimento direto ao cliente, oferecendo suporte na
-                identificação de produtos e esclarecimento de dúvidas.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Habilidades Principais -->
-        <section class="section">
-          <h2 class="section-title">HABILIDADES PRINCIPAIS</h2>
-          <div class="skills-list">
-            <div class="skill-item">
-              <div class="skill-title">Organização</div>
-              <div class="skill-description">
-                Capacidade de gerenciar fluxos de trabalho e priorizar tarefas,
-                garantindo uma resposta rápida e eficiente às solicitações de
-                suporte.
+        <div class="main-column">
+          <section class="section" aria-labelledby="perfil">
+            <h2 class="section-heading" id="perfil">Perfil Profissional</h2>
+            <p class="summary">
+              Tenho foco em desenvolvimento full stack e criação de soluções
+              digitais. Como freelancer, venho aplicando HTML, CSS, JavaScript,
+              Vue.js, Node.js e Git na construção de interfaces responsivas e
+              bases de aplicação organizadas, fáceis de manter e evoluir. Minha
+              experiência anterior em ambientes técnicos fortaleceu minha
+              capacidade de analisar problemas, testar aplicações, entender
+              necessidades de usuários e transformar requisitos em entregas
+              claras.
+            </p>
+            <div class="highlights">
+              <div class="highlight">
+                <strong>Front-End</strong>
+                <span>HTML, CSS, JavaScript, Vue.js e responsividade</span>
+              </div>
+              <div class="highlight">
+                <strong>Back-End</strong>
+                <span>Node.js, APIs, lógica de negócio e integração</span>
+              </div>
+              <div class="highlight">
+                <strong>Software</strong>
+                <span>Git, testes, organização e visão de produto</span>
               </div>
             </div>
-            <div class="skill-item">
-              <div class="skill-title">Comunicação Clara e Objetiva</div>
-              <div class="skill-description">
-                Facilidade em dialogar com clientes para identificar problemas e
-                fornecer soluções, garantindo uma experiência positiva e
-                centrada no cliente.
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-title">Proatividade</div>
-              <div class="skill-description">
-                Iniciativa em buscar soluções rápidas e eficientes, otimizando
-                processos e minimizando interrupções no uso de sistemas.
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-title">Desenvolvimento Front-End</div>
-              <div class="skill-description">
-                Criação de interfaces com Vue.js, HTML, CSS e JavaScript, com
-                foco em UX/UI e versionamento com Git.
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <!-- Formação -->
-        <section class="section">
-          <h2 class="section-title">FORMAÇÃO</h2>
-          <div class="education-item">
-            <div class="education-title">
-              Tecnólogo em Análise e Desenvolvimento de Sistemas
-            </div>
-            <div class="institution">Anhanguera Educacional</div>
-            <div class="education-period">Fev/2025 – Out/2028</div>
-          </div>
-          <div class="education-item">
-            <div class="education-title">Ensino Médio Completo</div>
-            <div class="institution">E.E. Thereza Dorothea</div>
-          </div>
-        </section>
+          <section class="section" aria-labelledby="experiencia">
+            <h2 class="section-heading" id="experiencia">Experiência</h2>
+            <div class="timeline">
+              <article class="experience-item">
+                <div class="job-header">
+                  <h3 class="job-title">Desenvolvedor Web Freelance</h3>
+                  <p class="company-line">We Techhub</p>
+                  <p class="period">Setembro/2025 - Atual</p>
+                </div>
+                <ul class="responsibilities">
+                  <li>
+                    Desenvolvimento de site institucional com foco em
+                    experiência do usuário, clareza visual e estrutura pronta
+                    para evolução.
+                  </li>
+                  <li>
+                    Criação de páginas e componentes com Vue.js, HTML, CSS e
+                    JavaScript, mantendo código limpo, responsivo e fácil de
+                    integrar com novas funcionalidades.
+                  </li>
+                  <li>
+                    Organização do código com Git e boas práticas de
+                    versionamento durante a evolução do projeto.
+                  </li>
+                </ul>
+              </article>
 
-        <!-- Certificados e Cursos -->
-        <section class="section">
-          <h2 class="section-title">CERTIFICADOS E CURSOS</h2>
-          <div class="course-item">
-            <div class="course-title">Suporte Técnico</div>
-            <div class="institution">Gabriel Gomes da Silva</div>
-          </div>
-          <div class="course-item">
-            <div class="course-title">
-              Curso Web Moderno Completo + JavaScript
+              <article class="experience-item">
+                <div class="job-header">
+                  <h3 class="job-title">Technical Support</h3>
+                  <p class="company-line">Digital Horizon Blockchain Technology</p>
+                  <p class="period">Novembro/2024 - Abril/2025</p>
+                </div>
+                <ul class="responsibilities">
+                  <li>
+                    Análise de fluxos técnicos em aplicações de criptoativos,
+                    identificando problemas e apoiando usuários durante
+                    operações digitais.
+                  </li>
+                  <li>
+                    Monitoramento e análise de bots via API, contribuindo para
+                    estabilidade de operações automatizadas.
+                  </li>
+                  <li>
+                    Apoio em testes de aplicações de compra e venda de
+                    criptoativos, com registro de falhas, documentação de
+                    comportamento e comunicação com o time.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="experience-item">
+                <div class="job-header">
+                  <h3 class="job-title">Technical Support</h3>
+                  <p class="company-line">Truther</p>
+                  <p class="period">Novembro/2024 - Abril/2025</p>
+                </div>
+                <ul class="responsibilities">
+                  <li>
+                    Acompanhamento de solicitações técnicas relacionadas a
+                    ativos digitais, conectando necessidades de usuários com
+                    análise de comportamento da aplicação.
+                  </li>
+                  <li>
+                    Registro de incidentes, organização de evidências e
+                    documentação de problemas para facilitar correções e
+                    melhorias.
+                  </li>
+                  <li>
+                    Participação em testes de usabilidade de novas
+                    funcionalidades da exchange.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="experience-item">
+                <div class="job-header">
+                  <h3 class="job-title">Auxiliar de Estoque</h3>
+                  <p class="company-line">BKA Conexões</p>
+                  <p class="period">Maio/2020 - Maio/2024</p>
+                </div>
+                <ul class="responsibilities">
+                  <li>
+                    Organização de estoque, separação e despacho de mercadorias
+                    com foco em agilidade, precisão e controle da rotina.
+                  </li>
+                  <li>
+                    Apoio à logística de entregas, coordenando prioridades,
+                    rotas e prazos para reduzir atrasos operacionais.
+                  </li>
+                  <li>
+                    Atendimento direto ao cliente para identificação de produtos,
+                    esclarecimento de dúvidas e apoio no processo de compra.
+                  </li>
+                </ul>
+              </article>
             </div>
-            <div class="institution">
-              Competências: JavaScript · HTML5 · CSS · Node.js · Vue.js
+          </section>
+
+          <section class="section" aria-labelledby="projetos">
+            <h2 class="section-heading" id="projetos">Projetos em destaque</h2>
+            <article class="project">
+              <strong>Site institucional - We Techhub</strong>
+              <p>
+                Desenvolvimento web de páginas institucionais com
+                componentização, responsividade, organização de código e atenção
+                à experiência visual do usuário.
+              </p>
+            </article>
+            <article class="project">
+              <strong>Currículo web pessoal</strong>
+              <p>
+                Página pessoal criada com HTML e CSS para apresentar trajetória,
+                habilidades, formação e canais profissionais de contato.
+              </p>
+            </article>
+          </section>
+        </div>
+
+        <aside class="side-column">
+          <section class="side-panel" aria-labelledby="competencias">
+            <h2 id="competencias">Competências</h2>
+            <div class="tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Vue.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Git</span>
+              <span class="tag">UX/UI</span>
+              <span class="tag">Desenvolvimento Web</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Responsividade</span>
+              <span class="tag">Componentes</span>
+              <span class="tag">Full Stack</span>
             </div>
-          </div>
-          <div class="course-item">
-            <div class="course-title">NLW Agents - Iniciante</div>
-            <div class="institution">Rocketseat</div>
-            <div class="education-period">Jul/2025</div>
-            <div class="education-period">
-              Competências: HTML5 · CSS · JavaScript
+          </section>
+
+          <section class="side-panel" aria-labelledby="habilidades">
+            <h2 id="habilidades">Pontos fortes</h2>
+            <ul class="stack-list">
+              <li>
+                <strong>Comunicação clara</strong>
+                Transformo ideias e problemas técnicos em explicações simples,
+                facilitando alinhamento e execução.
+              </li>
+              <li>
+                <strong>Organização</strong>
+                Mantenho código, tarefas e prioridades bem estruturados durante
+                a evolução dos projetos.
+              </li>
+              <li>
+                <strong>Aprendizado rápido</strong>
+                Tenho facilidade para aprender ferramentas e transformar estudo
+                em prática.
+              </li>
+              <li>
+                <strong>Visão de produto</strong>
+                Valorizo sistemas úteis, interfaces objetivas e experiências
+                fáceis de navegar.
+              </li>
+            </ul>
+          </section>
+
+          <section class="side-panel" aria-labelledby="formacao">
+            <h2 id="formacao">Formação</h2>
+            <div class="education-item">
+              <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong>
+              <span>Anhanguera Educacional</span>
+              <span>Fevereiro/2025 - Outubro/2028</span>
             </div>
-          </div>
-        </section>
+            <div class="education-item">
+              <strong>Ensino Médio Completo</strong>
+              <span>E.E. Thereza Dorothea</span>
+            </div>
+          </section>
+
+          <section class="side-panel" aria-labelledby="cursos">
+            <h2 id="cursos">Cursos</h2>
+            <ul class="compact-list">
+              <li>
+                <strong>Curso Web Moderno Completo + JavaScript</strong>
+                JavaScript, HTML5, CSS, Node.js e Vue.js
+              </li>
+              <li>
+                <strong>NLW Agents - Iniciante</strong>
+                Rocketseat - HTML5, CSS e JavaScript - Jul/2025
+              </li>
+              <li>
+                <strong>Fundamentos de TI e atendimento técnico</strong>
+                Gabriel Gomes da Silva
+              </li>
+            </ul>
+          </section>
+        </aside>
       </main>
-    </div>
+    </article>
   </body>
 </html>
