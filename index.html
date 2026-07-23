@@ -78,18 +78,6 @@
         align-content: center;
       }
 
-      .eyebrow {
-        width: fit-content;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 999px;
-        padding: 6px 12px;
-        color: #bfdbfe;
-        font-size: 0.78rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-      }
-
       h1 {
         max-width: 700px;
         font-size: clamp(2.2rem, 5vw, 4.4rem);
@@ -108,42 +96,6 @@
         max-width: 720px;
         color: #dbeafe;
         font-size: 1.02rem;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .button {
-        display: inline-flex;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 8px;
-        padding: 10px 15px;
-        font-weight: 700;
-        text-decoration: none;
-        transition:
-          transform 0.2s ease,
-          background 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-      }
-
-      .button.primary {
-        background: #f8fafc;
-        color: #111f3f;
-      }
-
-      .button.secondary {
-        border: 1px solid rgba(255, 255, 255, 0.24);
-        color: #f8fafc;
       }
 
       .profile-card {
@@ -201,7 +153,7 @@
         text-decoration: none;
       }
 
-      .contact-item span:first-child {
+      .contact-icon {
         display: inline-flex;
         width: 28px;
         height: 28px;
@@ -212,8 +164,19 @@
         background: rgba(255, 255, 255, 0.12);
       }
 
-      .contact-item span:last-child {
+      .contact-icon svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+      }
+
+      .contact-text {
         overflow-wrap: anywhere;
+      }
+
+      .contact-copy {
+        user-select: all;
+        cursor: text;
       }
 
       .content {
@@ -452,13 +415,6 @@
           height: 96px;
         }
 
-        .hero-actions {
-          display: grid;
-        }
-
-        .button {
-          width: 100%;
-        }
       }
 
       @media print {
@@ -488,40 +444,18 @@
     <article class="resume">
       <header class="hero">
         <div class="hero-main">
-          <p class="eyebrow">Currículo Web</p>
           <div>
             <h1>Jonathan Nwokolo</h1>
             <p class="role">Desenvolvedor Full Stack em formação</p>
           </div>
           <p class="intro">
             Desenvolvedor em formação com foco em desenvolvimento full stack,
-            interfaces web e soluções digitais. Tenho experiência prática com
-            HTML, CSS, JavaScript, Vue.js, Node.js e Git, além de vivência em
+            interfaces web e soluções digitais. Tenho adquirido experiência prática com
+            HTML, CSS, JavaScript, Vue.js, Node.js e Git entre outras stacks, além de vivência em
             ambientes técnicos que exigem análise de problemas, organização e
             comunicação. Busco oportunidades para construir aplicações
             funcionais, responsivas e bem estruturadas do front-end ao back-end.
           </p>
-          <div class="hero-actions" aria-label="Links de contato">
-            <a class="button primary" href="mailto:jonathan.nwokolo@gmail.com">
-              Enviar e-mail
-            </a>
-            <a
-              class="button secondary"
-              href="https://www.linkedin.com/in/jonathan-nwokolo-772a97334"
-              target="_blank"
-              rel="noreferrer"
-            >
-              LinkedIn
-            </a>
-            <a
-              class="button secondary"
-              href="https://github.com/JonathanNwokolo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-          </div>
         </div>
 
         <aside class="profile-card" aria-label="Dados pessoais">
@@ -537,13 +471,27 @@
             </div>
           </div>
           <div class="contact-grid">
-            <a class="contact-item" href="mailto:jonathan.nwokolo@gmail.com">
-              <span>@</span>
-              <span>jonathan.nwokolo@gmail.com</span>
-            </a>
-            <a class="contact-item" href="tel:+5511980195144">
-              <span>☎</span>
-              <span>+55 (11) 98019-5144</span>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M4 6.75A2.75 2.75 0 0 1 6.75 4h10.5A2.75 2.75 0 0 1 20 6.75v10.5A2.75 2.75 0 0 1 17.25 20H6.75A2.75 2.75 0 0 1 4 17.25zm2.19-.25 5.4 4.74a.62.62 0 0 0 .82 0l5.4-4.74zm11.31 1.13-4.75 4.17a2.12 2.12 0 0 1-2.8 0L5.2 7.63v9.62c0 .85.69 1.55 1.55 1.55h10.5c.86 0 1.55-.7 1.55-1.55z" />
+                </svg>
+              </span>
+              <span class="contact-text contact-copy">devnwokolo@gmail.com</span>
+            </div>
+            <a
+              class="contact-item"
+              href="https://wa.me/5511980195144"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Conversar no WhatsApp"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M19.05 4.94A9.77 9.77 0 0 0 12.08 2C6.71 2 2.34 6.34 2.34 11.7c0 1.71.45 3.39 1.3 4.87L2 22l5.6-1.59a9.8 9.8 0 0 0 4.48 1.08h.01c5.37 0 9.74-4.34 9.74-9.7a9.62 9.62 0 0 0-2.78-6.85m-6.97 14.9h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.33.94.89-3.25-.2-.33a8.12 8.12 0 0 1-1.26-4.32c0-4.5 3.68-8.16 8.21-8.16 2.2 0 4.26.85 5.82 2.4a8.1 8.1 0 0 1 2.4 5.77c0 4.5-3.69 8.18-8.04 8.18m4.48-6.12c-.24-.12-1.41-.69-1.63-.77-.22-.08-.38-.12-.54.12-.16.23-.62.76-.76.91-.14.16-.28.18-.52.06a6.63 6.63 0 0 1-1.95-1.2 7.37 7.37 0 0 1-1.36-1.68c-.14-.24-.01-.37.1-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.29-.74-1.77-.19-.46-.39-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.7 4.18 3.67.59.25 1.05.39 1.41.49.59.19 1.13.16 1.56.1.47-.07 1.41-.58 1.61-1.15.2-.57.2-1.06.14-1.16-.06-.11-.22-.17-.46-.29" />
+                </svg>
+              </span>
+              <span class="contact-text">+55 (11) 98019-5144</span>
             </a>
             <a
               class="contact-item"
@@ -551,8 +499,25 @@
               target="_blank"
               rel="noreferrer"
             >
-              <span>GH</span>
-              <span>github.com/JonathanNwokolo</span>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.11-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.21 2.46.11 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.5-.01 2.84 0 .27.18.59.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2" />
+                </svg>
+              </span>
+              <span class="contact-text">github.com/JonathanNwokolo</span>
+            </a>
+            <a
+              class="contact-item"
+              href="https://www.linkedin.com/in/jonathan-nwokolo-772a97334"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1M5.6 9.68h2.67V18H5.6zm4.35 0h2.56v1.13h.04c.36-.68 1.23-1.39 2.53-1.39 2.71 0 3.21 1.78 3.21 4.1V18h-2.67v-3.98c0-.95-.02-2.17-1.32-2.17-1.32 0-1.52 1.03-1.52 2.1V18H9.95z" />
+                </svg>
+              </span>
+              <span class="contact-text">linkedin.com/in/jonathan-nwokolo-772a97334</span>
             </a>
           </div>
         </aside>
@@ -560,6 +525,20 @@
 
       <main class="content">
         <div class="main-column">
+          <section class="section" aria-labelledby="sobre-mim">
+            <h2 class="section-heading" id="sobre-mim">Sobre mim</h2>
+            <p class="summary">
+              Sou uma pessoa dedicada e muito curiosa, ainda no início da
+              minha trajetória como desenvolvedor, mas com bastante vontade
+              de aprender e evoluir a cada projeto. Estou em constante
+              processo de aprendizado, buscando ganhar experiência prática,
+              me aprofundar tecnicamente e crescer como profissional a cada
+              desafio novo. Encaro cada projeto como uma oportunidade de
+              aprender algo a mais, e isso tem me ajudado a evoluir rápido
+              desde que comecei na área.
+            </p>
+          </section>
+
           <section class="section" aria-labelledby="perfil">
             <h2 class="section-heading" id="perfil">Perfil Profissional</h2>
             <p class="summary">
@@ -579,7 +558,7 @@
               </div>
               <div class="highlight">
                 <strong>Back-End</strong>
-                <span>Node.js, APIs, lógica de negócio e integração</span>
+                <span>Node.js, API Rest, lógica de negócio e integração</span>
               </div>
               <div class="highlight">
                 <strong>Software</strong>
@@ -599,18 +578,31 @@
                 </div>
                 <ul class="responsibilities">
                   <li>
-                    Desenvolvimento de site institucional com foco em
-                    experiência do usuário, clareza visual e estrutura pronta
-                    para evolução.
+                    Desenvolvimento e evolução do site institucional da We
+                    Techhub, migrando a base de Vue.js para React e
+                    reposicionando a agência como time integrado de
+                    desenvolvimento e performance.
                   </li>
                   <li>
-                    Criação de páginas e componentes com Vue.js, HTML, CSS e
-                    JavaScript, mantendo código limpo, responsivo e fácil de
-                    integrar com novas funcionalidades.
+                    Construção de front-end e telas de administração para o
+                    We Party, plataforma de descoberta e gestão de eventos:
+                    app do consumidor (feed social, busca, login) e CMS de
+                    produtores/admin (Next.js, React, TypeScript).
+                  </li>
+                  <li>
+                    Desenvolvimento da landing page e de funcionalidades da
+                    aplicação da Lelume, biblioteca digital por assinatura,
+                    incluindo painel de vouchers de acesso e integração com
+                    Supabase.
+                  </li>
+                  <li>
+                    Criação de páginas e componentes com Vue.js, React,
+                    TypeScript e Tailwind CSS, mantendo código limpo,
+                    responsivo e fácil de integrar com novas funcionalidades.
                   </li>
                   <li>
                     Organização do código com Git e boas práticas de
-                    versionamento durante a evolução do projeto.
+                    versionamento durante a evolução dos projetos.
                   </li>
                 </ul>
               </article>
@@ -690,18 +682,36 @@
           <section class="section" aria-labelledby="projetos">
             <h2 class="section-heading" id="projetos">Projetos em destaque</h2>
             <article class="project">
-              <strong>Site institucional - We Techhub</strong>
+              <strong>We Party - App e CMS de eventos</strong>
               <p>
-                Desenvolvimento web de páginas institucionais com
-                componentização, responsividade, organização de código e atenção
-                à experiência visual do usuário.
+                Plataforma de descoberta e gestão de eventos (shows, festas e
+                festivais). Atuação no app do consumidor em Vue.js e Vuetify,
+                com feed social, comentários, busca de eventos, login e
+                efeitos visuais (Three.js/GSAP), além do CMS de produtores e
+                painel administrativo em Next.js, React e TypeScript, com
+                dashboard de métricas, gestão de usuários e consumo de API
+                própria via cliente tipado gerado automaticamente.
               </p>
             </article>
             <article class="project">
-              <strong>Currículo web pessoal</strong>
+              <strong>Lelume - Biblioteca digital por assinatura (Ainda não publicado)</strong>
               <p>
-                Página pessoal criada com HTML e CSS para apresentar trajetória,
-                habilidades, formação e canais profissionais de contato.
+                Landing page e aplicação de uma biblioteca digital de
+                e-books, audiobooks e acervo técnico. Desenvolvimento de
+                seções com animações e depoimentos, além de painel
+                administrativo para vouchers de acesso cortesia, com
+                integração a Supabase (autenticação e banco de dados) e
+                sincronização de assinaturas via webhook.
+              </p>
+            </article>
+            <article class="project">
+              <strong>Site institucional - We Techhub</strong>
+              <p>
+                Desenvolvimento e evolução do site institucional da We
+                Techhub, com versão inicial em Vue.js (portfólio de projetos
+                e internacionalização) e reconstrução em React, alinhada ao
+                posicionamento da agência como time de desenvolvimento e
+                performance para e-commerce.
               </p>
             </article>
           </section>
@@ -714,12 +724,16 @@
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
               <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
               <span class="tag">Vue.js</span>
+              <span class="tag">React</span>
               <span class="tag">Node.js</span>
+              <span class="tag">mongodb</span>
+              <span class="tag">cypress</span>
               <span class="tag">Git</span>
               <span class="tag">UX/UI</span>
               <span class="tag">Desenvolvimento Web</span>
-              <span class="tag">APIs</span>
+              <span class="tag">APIs REST</span>
               <span class="tag">Responsividade</span>
               <span class="tag">Componentes</span>
               <span class="tag">Full Stack</span>
